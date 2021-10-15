@@ -40,15 +40,6 @@
             document.getElementById('function_field').value = received_data.function;
             document.getElementById('segments_field').value = received_data.segments;
             document.getElementById('result_field').value = received_result;
-            $("#method").val(localStorage.getItem("method"));
-            console.log(localStorage.getItem("method"));
-            if (localStorage.getItem("method") == "trapezoid_method_accuracy") {
-                document.getElementById('accuracy_field').value = received_data.accuracy;
-               /* $(".segments").after(`<input type="number" data-name="Точность" 
-        step="any" class="accuracy" name="accuracy" placeholder="Точность" required="">`) */
-            } else {
-                $(".accuracy").remove();
-            }
         } else {
             alert("Упc! Похоже, у вас нет доступа к данной странице. Проверьте корректность введенных данных")
             window.location.assign("{% url 'functions' %}");
