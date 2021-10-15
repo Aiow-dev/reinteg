@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Регистрация | reinteg{% endblock title %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    {#    <title>Title</title>#}
+</head>
+
+<body>
+    {% block content %}
+    <form method="post" style="padding: 15px 30px;" class="signup__form">
+        {% csrf_token %}
+        {{ form }}
+        <button class="btn btn-success" type="submit" style="padding: 5px 15px;">Регистрация</button>
+    </form>
+    <script type="text/javascript">
+        document.getElementById("id_username").setAttribute("placeholder", "Имя пользователя*");
+        document.getElementById("id_email").setAttribute("placeholder", "Электронная почта*");
+        document.getElementById("id_password1").setAttribute("placeholder", "Пароль*");
+        document.getElementById("id_password2").setAttribute("placeholder", "Подтвердите пароль*");
+    </script>
+    {% endblock content %}
+</body>
+
+</html>

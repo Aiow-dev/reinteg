@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    {% block title %}Результат вычисления{% endblock title %}
+</head>
+
+<body>
+    {% block content%}
+    <form class="integral__form dflex_column">
+        {% csrf_token %}
+        <div class="dflex_column">
+            <div class="dflex_row" style="align-items: center">
+                <div class="dflex_column" style="align-items:center">
+                    <input readonly type="number" id="integ_top_field" class="integ__small" name="integ_top">
+                    <p class="integral" style="margin: 0 0 20px 0;">&int;</p>
+                    <input readonly type="number" id="integ_bottom_field" class="integ__small" name="integ_bottom">
+                </div>
+                <input readonly type="text" id="function_field" class="function" name="function">
+            </div>
+            <input readonly type="number" step="any" id="accuracy_field" class="accuracy">
+            <input readonly type="number" id="segments_field" class="segments">
+            <div class="dflex_row" style="align-items:center">
+                <p class="integral" style="margin-top: -40px;">=</p>
+                <input readonly type="text" id="result_field" class="segments" placeholder="Результат">
+            </div>
+        </div>
+    </form>
+    <script type="text/javascript">
+        var received_data = '{{ data | escapejs }}' != '' ? JSON.parse('{{ data | escapejs }}') : null;
+        var received_result = '{{ result | escapejs }}';
+        console.log(received_data);
+        console.log(received_result);
+        if (received_data != null) {
+            document.getElementById('integ_top_field').value = received_data.integ_top;
+            document.getElementById('integ_bottom_field').value = received_data.integ_bottom;
+            document.getElementById('function_field').value = received_data.function;
+            document.getElementById('segments_field').value = received_data.segments;
+            document.getElementById('result_field').value = received_result;
+            $("#method").val(localStorage.getItem("method"));
+            console.log(localStorage.getItem("method"));
+            if (localStorage.getItem("method") == "trapezoid_method_accuracy") {
+                document.getElementById('accuracy_field').value = received_data.accuracy;
+               /* $(".segments").after(`<input type="number" data-name="Точность" 
+        step="any" class="accuracy" name="accuracy" placeholder="Точность" required="">`) */
+            } else {
+                $(".accuracy").remove();
+            }
+        } else {
+            alert("Упc! Похоже, у вас нет доступа к данной странице. Проверьте корректность введенных данных")
+            window.location.assign("{% url 'functions' %}");
+        }
+    </script>
+    <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
+    {% endblock content %}
+</body>
+
+</html>

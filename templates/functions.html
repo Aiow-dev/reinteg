@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    {% block title %}Вычислить определенный интеграл{% endblock title %}
+</head>
+
+<body>
+    {% block content%}
+    <form class="integral__form dflex_column" method="post" action="{% url 'functions' %}">
+        {% csrf_token %}
+        <input type="text" name="method" id="method" style="display: none;">
+        <div class="dflex_column">
+            <div class="dflex_row" style="align-items: center">
+                <div class="dflex_column" style="align-items:center">
+                    <input type="number" data-name="Верхний предел интегрирования" step="any" class="integ__small"
+                        name="integ_top" required>
+                    <p class="integral" style="margin: 0 0 20px 0;">&int;</p>
+                    <input type="number" data-name="Нижний предел интегрирования" step="any" class="integ__small"
+                        name="integ_bottom" required>
+                </div>
+                <input type="text" data-name="Интегрируемая функция" class="function" name="function"
+                    placeholder="Интегрируемая функция" required>
+                <p>dx</p>
+            </div>
+            <input type="number" data-name="Сегменты" class="segments" name="segments" placeholder="Сегменты" required>
+        </div>
+        <button class="math__button" name="math_button" type="submit">Вычислить</button>
+        <p class="error" style="color: #8F0A22; font-size: 12px"></p>
+    </form>
+    <div class="card text-white bg-info"
+        style="display: flex; margin: auto; align-items: center; justify-content: center; width: 36vw;">
+        <div class="card-body">
+            <h5 class="card-title">Поддерживаемые функции</h5>
+            </br>
+            sqrt() - корень из заданного выражения
+            </br>
+            ^ - возведение в степень, определенную выражением
+            </br>
+            sin() - синус заданного выражения
+            </br>
+            arcsn() - арксинус заданного выражения
+            </br>
+            snh() - гиперболический синус заданного выражения
+            </br>
+            cos() - косинус заданного выражения
+            </br>
+            arcccs() - арккосинус заданного выражения
+            </br>
+            csh() - гиперболический косинус заданного выражения
+            </br>
+            tg() - тангенс заданного выражения
+            </br>
+            atan() - арктангенс заданного выражения
+            </br>
+            pi - число Пи
+            </br>
+            e - число Непера
+        </div>
+    </div>
+    <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
+    {% endblock content %}
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  {% block title %}reinteg{% endblock title %}
+</head>
+
+<body>
+  {% block content%}
+  <div style="position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);width: 50%" <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Выберите метод интегрирования
+    </button>
+    <style>
+      .dropdown-menu {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+      }
+
+      .dropdown-divider {
+        margin: 0;
+      }
+    </style>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" style="white-space: break-spaces;" href="{% url 'piece_permanent_approximation_method' %}">Метод кусочно-постоянной аппроксимации</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" style="white-space: break-spaces;"
+        href="{% url 'piece_linear_approximation_method' %}">Метод кусочно-линейной аппроксимации</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" style="white-space: break-spaces;" href="{% url 'functions' %}">Метод кусочно-параболической аппроксимации</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" style="white-space: break-spaces;" href="{% url 'functions' %}">Метод Ромберга</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" style="white-space: break-spaces;" href="{% url 'functions' %}">Авто</a>
+    </div>
+  </div>
+  {% endblock content %}
+</body>
+
+</html>
