@@ -12,6 +12,5 @@ def get_choose_method(method):
 
 
 def is_accuracy_method(method):
-    methods_accuracy = {'trapezoid_method_accuracy': True}
-    return methods_accuracy[method]
-    
+    if method == 'trapezoid_method_accuracy':
+        return True
