@@ -1,0 +1,191 @@
+.dflex_row
+{
+    display: flex;
+}
+
+.dflex_column
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.helptext
+{
+    display: block;
+
+    margin-bottom: 30px;
+}
+
+.custom-input
+{
+    width: 35vw;
+    height: 6vh;
+    margin-bottom: 10px;
+    margin-left: 10px;
+
+    border: none;
+    border-radius: 3px;
+    background-color: #343a40;
+}
+
+.integral__form p
+{
+    margin: 0;
+}
+
+.login__form,
+.integral__form
+{
+    display: flex;
+
+    width: 100vw;
+    height: 90vh;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.login__form input::-webkit-outer-spin-button,
+.login__form input::-webkit-inner-spin-button,
+.login__form input:-webkit-autofill,
+.login__form input:-webkit-autofill:focus,
+.signup__form input::-webkit-outer-spin-button,
+.signup__form input::-webkit-inner-spin-button,
+.signup__form input:-webkit-autofill,
+.signup__form input:-webkit-autofill:focus,
+.integral__form input::-webkit-outer-spin-button,
+.integral__form input::-webkit-inner-spin-button,
+.integral__form input:-webkit-autofill,
+.integral__form input:-webkit-autofill:focus,
+.password__change__form input::-webkit-outer-spin-button,
+.password__change__form input::-webkit-inner-spin-button,
+.password__change__form input:-webkit-autofill,
+.password__change__form input:-webkit-autofill:focus
+{
+    outline: none;
+    -webkit-box-shadow: 0 0 0 10000px #f39c12 inset;
+
+    -webkit-appearance: none;
+}
+
+.integral__form input:focus,
+.integral__form button:focus,
+.login__form input:focus,
+.login__form button:focus
+{
+    outline: 2px solid #aaa;
+}
+
+.function,
+.accuracy,
+.segments,
+.math__button,
+.login__form input
+{
+    width: 35vw;
+    margin-top: 5px;
+    padding: 5px 10px;
+
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    background-color: #343a40;
+}
+
+.integ__small
+{
+    font-size: 12px;
+
+    width: 15px;
+    height: 15px;
+    padding: 0;
+
+    text-align: center;
+
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    background-color: #343a40;
+}
+
+.integ__small:focus
+{
+    outline: 2px solid #aaa;
+}
+
+.integral
+{
+    font-size: 64px;
+    line-height: 47px;
+
+    padding: 0;
+
+    user-select: none;
+    pointer-events: none;
+
+    color: #343a40;
+}
+
+.accuracy,
+.segments
+{
+    width: 15vw;
+    margin-bottom: 30px;
+    margin-left: 36px;
+}
+
+.math__button
+{
+    width: 15vw;
+}
+
+/* SignUp and Password Change*/
+
+.signup__form input
+{
+    width: 100%;
+    height: 7vh;
+    margin-bottom: 10px;
+    padding-left: 10px;
+
+    border: none;
+    border-radius: 3px;
+    background-color: #343a40;
+}
+
+.password__change__form input
+{
+    width: 30vw;
+    margin-bottom: 35px;
+}
+
+.password__change__form input:focus,
+.signup__form input:focus
+{
+    outline: 2px solid #aaa;
+}
+
+/* LogIn */
+
+.login__form input
+{
+    height: 7vh;
+}
+
+.login__form button:focus {
+    outline: 1px solid #26A142;
+}
+
+/* Menu Auth */
+
+div.dropdown-menu.menu_auth
+{
+    width: 20vw;
+}
+
+.password__change__form br,
+.password__change__form span,
+.password__change__form label
+{
+    display: none;
+}

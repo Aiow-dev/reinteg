@@ -6,8 +6,10 @@ name = "pypi"
 [packages]
 django = "*"
 django-crispy-forms = "*"
-environs = "*"
+environs = {extras = ["django"], version = "*"}
 dj-database-url = "*"
+whitenoise = "==5.1.0"
+gunicorn = "*"
 
 [dev-packages]
 
