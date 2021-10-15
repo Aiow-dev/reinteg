@@ -10,6 +10,7 @@ environs = {extras = ["django"], version = "*"}
 dj-database-url = "*"
 whitenoise = "==5.1.0"
 gunicorn = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 
