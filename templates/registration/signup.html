@@ -7,14 +7,13 @@
 
 <head>
     <meta charset="UTF-8">
-    {#    <title>Title</title>#}
 </head>
 
 <body>
     {% block content %}
     <form method="post" style="padding: 15px 30px;" class="signup__form">
         {% csrf_token %}
-        {{ form }}
+        {{ form|crispy }}
         <button class="btn btn-success" type="submit" style="padding: 5px 15px;">Регистрация</button>
     </form>
     <script type="text/javascript">

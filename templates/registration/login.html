@@ -21,7 +21,7 @@
                 style="display: block; width: 15vw; margin-top: 30px; margin-bottom: 20px; align-self: center;">Войти</button>
             <div style="float: right;">
                 <a href="{% url 'signup' %}">Нет аккаунта? Зарегистрируйтесь!</a>
-                <a href="#" style="float: right;">Забыли пароль?</a>
+                <a href="{% url 'password_reset' %}" style="float: right;">Забыли пароль?</a>
             </div>
         </div>
     </form>

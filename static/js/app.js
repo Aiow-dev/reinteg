@@ -27,11 +27,11 @@ $(".integral__form").submit(function(e){
 
 $(document).ready(function() {
     $("#method").val(localStorage.getItem("method"));
-    // console.log(localStorage.getItem("method"));
-    // if(localStorage.getItem("method") == "trapezoid_method_accuracy") {
-    //     $(".segments").after(`<input type="number" data-name="Точность" 
-    //     step="any" class="accuracy" name="accuracy" placeholder="Точность" required="">`)
-    // } else {
-    //     $(".accuracy").remove();
-    // }
+    console.log(localStorage.getItem("method"));
+    if(localStorage.getItem("method") == "trapezoid_method_accuracy") {
+        $(".segments").after(`<input type="number" data-name="Точность" 
+        step="any" class="accuracy" name="accuracy" placeholder="Точность" required="">`)
+    } else {
+        $(".accuracy").remove();
+    }
 })
